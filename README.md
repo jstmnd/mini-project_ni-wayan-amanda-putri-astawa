@@ -25,11 +25,14 @@ This is a functional testing project for 3 basic applications consisting of API,
 
 ## Setup 
 - API: 
-    mvn clean verify => for all case
-    mvn clean verify -Dtags="(case_name)" => for one case
+    1. mvn clean verify => for all case
+    2. mvn clean verify -Dtags="(case_name)" => for one case
 - Web: 
-    mvn clean verify => for all case
-    mvn clean verify -Dtags="(case_name)" => for one case
+    1. mvn clean verify => for all case
+    2. mvn clean verify -Dtags="(case_name)" => for one case
 - Mobile: 
-    npm test => for run test
-    npm run report => for run test repost
+    1. npm test => for run test
+    2. npm run report => for run test repost
+
+## Other
+Reporsitory for CI Testing: [CI Pipeline](https://github.com/jstmnd/mini-project_ci-testing)   
