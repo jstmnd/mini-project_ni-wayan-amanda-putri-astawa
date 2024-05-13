@@ -24,7 +24,6 @@ This is a functional testing project for 3 basic applications consisting of API,
 - Mobile: [Hasil Test Case](https://github.com/jstmnd/mini-project_ni-wayan-amanda-putri-astawa/assets/99030230/622aa36a-f9a6-4e10-9c6a-085ec3e9f0b6)
 
 ## Setup 
-sebutkan cara menggunakan project ini di lokal
 - API: 
     mvn clean verify => for all case
     mvn clean verify -Dtags="(case_name)" => for one case
