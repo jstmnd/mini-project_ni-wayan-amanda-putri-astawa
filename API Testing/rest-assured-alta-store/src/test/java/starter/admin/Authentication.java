@@ -12,6 +12,7 @@ import static org.hamcrest.Matchers.notNullValue;
 
 public class Authentication {
     private static String url = "https://altashop-api.fly.dev/api";
+    private static String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw";
 
     @Step("I set API endpoint for register")
     public String setRegisterApiEndpoint() {
@@ -103,7 +104,7 @@ public class Authentication {
     @Step("I send a GET request for get user information")
     public void sendUserInfoRequest() {
         SerenityRest.given()
-                .header("Authorization", "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw")
+                .header("Authorization", "Bearer " + token)
                 .get(setGetUserApiEndpoint());
     }
 

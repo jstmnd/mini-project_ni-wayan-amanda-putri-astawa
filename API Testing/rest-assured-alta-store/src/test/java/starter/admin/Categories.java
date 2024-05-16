@@ -13,6 +13,7 @@ import static org.hamcrest.Matchers.nullValue;
 
 public class Categories {
     private static String url = "https://altashop-api.fly.dev/api";
+    private static String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw";
 
     @Step("I set API endpoint for create category")
     public String setPostApiEndpoint() {
@@ -91,7 +92,7 @@ public class Categories {
     @Step("I send a GET request for all category")
     public void sendAllCategoryRequest() {
         SerenityRest.given()
-                .header("Authorization", "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw")
+                .header("Authorization", "Bearer " + token)
                 .get(setGetAllCategoryApiEndpoint());
     }
 
@@ -115,7 +116,7 @@ public class Categories {
     @Step("I send a DELETE request for delete a category")
     public void sendDeleteCategoryRequest() {
         SerenityRest.given()
-                .header("Authorization", "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw")
+                .header("Authorization", "Bearer " + token)
                 .delete(setDeleteCategoryApiEndpoint());
     }
 

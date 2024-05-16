@@ -14,6 +14,7 @@ import static org.hamcrest.Matchers.*;
 
 public class Orders {
     private static String url = "https://altashop-api.fly.dev/api";
+    private static String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw";
 
     @Step("I set API endpoint for create a new order")
     public String setPostOrderApiEndpoint() {
@@ -32,7 +33,7 @@ public class Orders {
 
         SerenityRest.given()
                 .header("Content-Type", "application/json")
-                .header("Authorization", "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw")
+                .header("Authorization", "Bearer " + token)
                 .body(jsonArray.toString())
                 .post(setPostOrderApiEndpoint());
     }
@@ -56,7 +57,7 @@ public class Orders {
     @Step("I send a POST request without new order data")
     public void sendInvalidNewOrderRequest() {
         SerenityRest.given()
-                .header("Authorization", "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw")
+                .header("Authorization", "Bearer " + token)
                 .post(setPostOrderApiEndpoint());
     }
 
@@ -68,7 +69,7 @@ public class Orders {
     @Step("I send a GET request for get all orders")
     public void sendGetAllOrdersRequest() {
         SerenityRest.given()
-                .header("Authorization", "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw")
+                .header("Authorization", "Bearer " + token)
                 .get(setGetOrdersEndpoint());
     }
 

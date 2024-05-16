@@ -14,6 +14,7 @@ import static org.hamcrest.Matchers.nullValue;
 
 public class Products {
     private static String url = "https://altashop-api.fly.dev/api";
+    private static String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw";
 
     @Step("I set API endpoint for create new product")
     public String setPostApiEndpoint() {
@@ -126,7 +127,7 @@ public class Products {
     @Step("I send a GET request for get all product")
     public void sendAllProductRequest() {
         SerenityRest.given()
-                .header("Authorization", "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw")
+                .header("Authorization", "Bearer " + token)
                 .get(setGetAllProductApiEndpoint());
     }
 
@@ -153,7 +154,7 @@ public class Products {
     @Step("I send a DELETE request for delete a product")
     public void sendDeleteProductRequest() {
         SerenityRest.given()
-                .header("Authorization", "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.bGpZNDg6YHtKlTFw7_yuyn3SAICmfvdIV1yX7mIKrTw")
+                .header("Authorization", "Bearer " + token)
                 .delete(setDeleteProductApiEndpoint());
     }
 
